@@ -9,11 +9,6 @@ public abstract class Libro {
         this.nombre = nombre;
     }
 
-
-    public String nombre() {
-        return nombre;
-    }
-
     abstract double calcularMonto(int diasAlquilados, double monto);
 
     abstract int puntosNuevoLanzamiento(int diasAlquilados);
