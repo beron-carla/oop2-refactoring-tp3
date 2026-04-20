@@ -7,15 +7,15 @@ import static org.junit.Assert.assertEquals;
 public class TestCalculoDePago {
     @Test
     public void testeaCalculoDePagoLibroRegular(){
-        Libro libroRegular1 = new LibroRegular("El Túnel");
-        Libro libroRegular2 = new LibroRegular("Antes del Fin");
-        CopiaLibro elTunelCopia = new CopiaLibro(libroRegular1);
-        CopiaLibro antesDelFinCopia = new CopiaLibro(libroRegular2);
-        Alquiler alquilerElTunel = new Alquiler(elTunelCopia, 5);
-        Alquiler alquilerAntesDelFin = new Alquiler(antesDelFinCopia, 3);
+        Libro libroRegular1 = new LibroRegular("Regular 1");
+        Libro libroRegular2 = new LibroRegular("Regular 2");
+        CopiaLibro libroRegular1Copia = new CopiaLibro(libroRegular1);
+        CopiaLibro libroRegular2Copia = new CopiaLibro(libroRegular2);
+        Alquiler alquilerLibroRegular1 = new Alquiler(libroRegular1Copia, 5);
+        Alquiler alquilerLibroRegular2 = new Alquiler(libroRegular2Copia, 3);
         Cliente cliente = new Cliente("Carla");
-        cliente.alquilar(alquilerElTunel);
-        cliente.alquilar(alquilerAntesDelFin);
+        cliente.alquilar(alquilerLibroRegular1);
+        cliente.alquilar(alquilerLibroRegular2);
         Object[] resultado = cliente.calcularDeudaYPuntosObtenidos();
         assertEquals(10.0, resultado[0]);
         assertEquals(2, resultado[1]);
@@ -23,15 +23,15 @@ public class TestCalculoDePago {
 
     @Test
     public void testeaCalculoDePagoLibroInfantiles(){
-        Libro libroInfantil1 = new LibroInfantiles("El Túnel");
-        Libro libroInfantil2 = new LibroInfantiles("Antes del Fin");
-        CopiaLibro elTunelCopia = new CopiaLibro(libroInfantil1);
-        CopiaLibro antesDelFinCopia = new CopiaLibro(libroInfantil2);
-        Alquiler alquilerElTunel = new Alquiler(elTunelCopia, 5);
-        Alquiler alquilerAntesDelFin = new Alquiler(antesDelFinCopia, 3);
+        Libro libroInfantil1 = new LibroInfantiles("Infantil 1");
+        Libro libroInfantil2 = new LibroInfantiles("Infantil 2");
+        CopiaLibro libroInfantil1Copia = new CopiaLibro(libroInfantil1);
+        CopiaLibro libroInfantil2Copia = new CopiaLibro(libroInfantil2);
+        Alquiler alquilerLibroInfantil1 = new Alquiler(libroInfantil1Copia, 5);
+        Alquiler alquilerLibroInfantil2 = new Alquiler(libroInfantil2Copia, 3);
         Cliente cliente = new Cliente("Carla");
-        cliente.alquilar(alquilerElTunel);
-        cliente.alquilar(alquilerAntesDelFin);
+        cliente.alquilar(alquilerLibroInfantil1);
+        cliente.alquilar(alquilerLibroInfantil2);
         Object[] resultado = cliente.calcularDeudaYPuntosObtenidos();
         assertEquals(6.0, resultado[0]);
         assertEquals(2, resultado[1]);
@@ -39,15 +39,15 @@ public class TestCalculoDePago {
 
     @Test
     public void testeaCalculoDePagoLibroNuevoLanzamiento(){
-        Libro libroNuevoLanzamiento1 = new LibroNuevoLanzamiento("El Túnel");
-        Libro libroNuevoLanzamiento2 = new LibroNuevoLanzamiento("Antes del Fin");
-        CopiaLibro elTunelCopia = new CopiaLibro(libroNuevoLanzamiento1);
-        CopiaLibro antesDelFinCopia = new CopiaLibro(libroNuevoLanzamiento2);
-        Alquiler alquilerElTunel = new Alquiler(elTunelCopia, 5);
-        Alquiler alquilerAntesDelFin = new Alquiler(antesDelFinCopia, 3);
+        Libro libroNuevoLanzamiento1 = new LibroNuevoLanzamiento("Nuevo lanzamiento 1");
+        Libro libroNuevoLanzamiento2 = new LibroNuevoLanzamiento("Nuevo lanzamiento 2");
+        CopiaLibro nuevoLanzamiento1Copia = new CopiaLibro(libroNuevoLanzamiento1);
+        CopiaLibro nuevoLanzamiento2Copia = new CopiaLibro(libroNuevoLanzamiento2);
+        Alquiler alquilerNuevoLanzamiento1 = new Alquiler(nuevoLanzamiento1Copia, 5);
+        Alquiler alquilerNuevoLanzamiento2 = new Alquiler(nuevoLanzamiento2Copia, 3);
         Cliente cliente = new Cliente("Carla");
-        cliente.alquilar(alquilerElTunel);
-        cliente.alquilar(alquilerAntesDelFin);
+        cliente.alquilar(alquilerNuevoLanzamiento1);
+        cliente.alquilar(alquilerNuevoLanzamiento2);
         Object[] resultado = cliente.calcularDeudaYPuntosObtenidos();
         assertEquals(24.0, resultado[0]);
         assertEquals(4, resultado[1]);
